@@ -63,9 +63,10 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 .fact{padding:100px 0;position:relative}
 .fi{max-width:1100px;margin:0 auto;padding:0 32px;display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
 .fi.rev{direction:rtl}.fi.rev>*{direction:ltr}
-.fn{font-size:.7rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;display:flex;align-items:center;gap:14px}
+.fn{font-size:.65rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;display:flex;align-items:center;gap:14px}
 .fn::after{content:'';flex:1;height:1px;background:linear-gradient(to right,var(--accent-brd),transparent)}
-.ft{font-family:var(--S);font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:500;color:var(--text);line-height:1.22;margin-bottom:24px}
+.fact-num{font-family:var(--S);font-size:clamp(4rem,8vw,6.5rem);font-weight:300;line-height:.85;background:linear-gradient(135deg,var(--accent),var(--warm));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px;letter-spacing:-.03em;opacity:.35}
+.ft{font-family:var(--S);font-size:clamp(2rem,4vw,2.9rem);font-weight:500;color:var(--text);line-height:1.22;margin-bottom:24px}
 .fb{font-size:1.05rem;line-height:1.85;color:var(--body)}
 .fb p{margin-bottom:16px}
 .fb strong{color:var(--text);font-weight:600}
@@ -148,13 +149,17 @@ body::before{content:'';position:fixed;inset:0;background-image:url("data:image/
 footer{text-align:center;padding:50px 32px;border-top:1px solid var(--border);font-size:.85rem;color:var(--dim)}
 footer a{color:var(--accent);text-decoration:none}
 
+.sticky-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:998;background:rgba(250,247,244,.95);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);padding:12px 20px;box-shadow:0 -4px 20px rgba(0,0,0,.06);border-top:1px solid var(--accent-brd);text-align:center;transform:translateY(100%);transition:transform .4s}
+.sticky-cta.show{transform:translateY(0)}
+.sticky-cta a{display:block;padding:14px;background:var(--accent);color:#fff;font-size:.75rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;text-decoration:none}
 @keyframes fadeUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
 .rv{opacity:0;transform:translateY(30px);transition:all .8s cubic-bezier(.16,1,.3,1)}
 .rv.visible{opacity:1;transform:translateY(0)}
 .counter{font-variant-numeric:tabular-nums}
 
-@media(max-width:900px){.fi,.fi.rev{grid-template-columns:1fr;direction:ltr;gap:40px}.fi.rev>*{direction:ltr}.hero{padding:40px 24px 80px}.cw{padding:0 24px}.trans-inner{padding:90px 40px 70px}.intro{padding:80px 24px 60px}}
-@media(max-width:600px){.fact{padding:60px 0}.fi{padding:0 20px;gap:32px}.ic{padding:28px 22px}.ic svg{max-width:100%}.cta-c{padding:44px 24px}.cta-ff{flex-direction:column;align-items:center;gap:10px}.bridge{padding:80px 20px}.bridge h2{font-size:clamp(1.7rem,6vw,2.4rem)}.trans-inner{padding:60px 24px 44px}.trans p{font-size:1.05rem;margin-bottom:18px}.trans .t-statement{font-size:1.25rem;padding-left:20px}.trans .t-final{padding:28px 18px;font-size:clamp(1.3rem,4vw,1.7rem)}.hero{padding:30px 20px 70px;min-height:90vh}.hero h1{font-size:clamp(2.2rem,10vw,3.2rem)!important}.hero-sub{font-size:1.05rem!important;margin:18px auto 0;max-width:100%}.hero-badge{margin-bottom:32px;font-size:.6rem;padding:8px 20px}.intro p{font-size:1.05rem}.intro .bright{font-size:1.12rem}.ft{font-size:clamp(1.6rem,5vw,2rem)}.hl{padding:18px 22px}.hl p{font-size:1.15rem}body{font-size:17px}}
+@media(max-width:900px){[style*="grid-template-columns:repeat(3"]{grid-template-columns:1fr!important}[style*="grid-template-columns:repeat(2"]{grid-template-columns:1fr!important}.sticky-cta{display:block}.fi,.fi.rev{grid-template-columns:1fr;direction:ltr;gap:40px}.fi.rev>*{direction:ltr}.hero{padding:40px 24px 80px}.cw{padding:0 24px}.trans-inner{padding:90px 40px 70px}.intro{padding:80px 24px 60px}}
+@media(max-width:600px){.fact{padding:60px 0}.fi{padding:0 20px;gap:32px}.ic{padding:28px 22px}.ic svg{max-width:100%}.cta-c{padding:44px 24px}.cta-ff{flex-direction:column;align-items:center;gap:10px}.bridge{padding:80px 20px}.bridge h2{font-size:clamp(1.7rem,6vw,2.4rem)}.trans-inner{padding:60px 24px 44px}.trans p{font-size:1.05rem;margin-bottom:18px}.trans .t-statement{font-size:1.25rem;padding-left:20px}.trans .t-final{padding:28px 18px;font-size:clamp(1.3rem,4vw,1.7rem)}.hero{padding:30px 20px 70px;min-height:90vh}.hero h1{font-size:clamp(2.2rem,10vw,3.2rem)!important}.hero-sub{font-size:1.05rem!important;margin:18px auto 0;max-width:100%}.hero-badge{margin-bottom:32px;font-size:.6rem;padding:8px 20px}.intro p{font-size:1.05rem}.intro .bright{font-size:1.12rem}.fact-num{font-size:clamp(3.2rem,14vw,5rem)!important}
+.ft{font-size:clamp(1.7rem,7vw,2.4rem)}.hl{padding:18px 22px}.hl p{font-size:1.15rem}body{font-size:17px}}
 </style>
 </head>
 <body>
@@ -178,6 +183,27 @@ footer a{color:var(--accent);text-decoration:none}
   <p>И где-то внутри — тихое: <strong>«ну я вот такая. Не то чтобы красавица, но зато умная, добрая, работящая»</strong>. Как будто красота и что-то настоящее — несовместимы.</p>
   <br>
   <p class="bright">Что, если проблема не в том, как вы выглядите — а в том, как мозг научился вас видеть?</p>
+
+  <div style="max-width:680px;margin:40px auto 0;background:var(--card);border:1px solid var(--accent-brd);border-radius:4px;overflow:hidden;position:relative">
+    <div style="position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--accent),var(--warm));opacity:.6"></div>
+    <div style="padding:28px 36px 20px;border-bottom:1px solid var(--border)">
+      <div style="display:flex;align-items:center;gap:12px">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        <div style="font-family:var(--S);font-size:1.2rem;color:var(--text);font-weight:500">Дочитав до конца, вы узнаете:</div>
+      </div>
+    </div>
+    <div style="padding:8px 0">
+      <div style="display:flex;align-items:flex-start;gap:16px;padding:16px 36px"><div style="flex-shrink:0;width:28px;height:28px;border-radius:50%;background:rgba(155,107,120,.07);display:flex;align-items:center;justify-content:center;font-family:var(--S);font-size:.85rem;font-weight:600;color:var(--accent)">1</div><div style="font-size:1rem;color:var(--body);line-height:1.55">Как <strong style="color:var(--text)">чужой взгляд в детстве</strong> определил то, что вы видите в зеркале<br><span style="font-size:.88rem;color:var(--muted)">И почему это решение до сих пор работает</span></div></div>
+      <div style="display:flex;align-items:flex-start;gap:16px;padding:16px 36px"><div style="flex-shrink:0;width:28px;height:28px;border-radius:50%;background:rgba(155,107,120,.07);display:flex;align-items:center;justify-content:center;font-family:var(--S);font-size:.85rem;font-weight:600;color:var(--accent)">2</div><div style="font-size:1rem;color:var(--body);line-height:1.55">Почему кортизол <strong style="color:var(--text)">меняет ваше отражение</strong> на 20–30%<br><span style="font-size:.88rem;color:var(--muted)">Вы красивее, чем видите. Это доказано</span></div></div>
+      <div style="display:flex;align-items:flex-start;gap:16px;padding:16px 36px"><div style="flex-shrink:0;width:28px;height:28px;border-radius:50%;background:rgba(155,107,120,.07);display:flex;align-items:center;justify-content:center;font-family:var(--S);font-size:.85rem;font-weight:600;color:var(--accent)">3</div><div style="font-size:1rem;color:var(--body);line-height:1.55">Где именно <strong style="color:var(--text)">в теле хранится решение</strong> «красота — не моё»<br><span style="font-size:.88rem;color:var(--muted)">Плечи, дыхание, взгляд, осанка</span></div></div>
+      <div style="display:flex;align-items:flex-start;gap:16px;padding:16px 36px"><div style="flex-shrink:0;width:28px;height:28px;border-radius:50%;background:rgba(139,123,90,.07);display:flex;align-items:center;justify-content:center;font-family:var(--S);font-size:.85rem;font-weight:600;color:var(--warm)">4</div><div style="font-size:1rem;color:var(--body);line-height:1.55">Как война с телом <strong style="color:var(--text)">ускоряет старение</strong><br><span style="font-size:.88rem;color:var(--muted)">Ирония: борьба за красоту разрушает красоту</span></div></div>
+      <div style="display:flex;align-items:flex-start;gap:16px;padding:16px 36px"><div style="flex-shrink:0;width:28px;height:28px;border-radius:50%;background:rgba(139,123,90,.07);display:flex;align-items:center;justify-content:center;font-family:var(--S);font-size:.85rem;font-weight:600;color:var(--warm)">5</div><div style="font-size:1rem;color:var(--body);line-height:1.55"><strong style="color:var(--text)">Как отменить решение</strong><br><span style="font-size:.88rem;color:var(--muted)">Не в голове. В теле. Конкретная практика</span></div></div>
+    </div>
+    <div style="padding:14px 36px 18px;background:rgba(155,107,120,.025);border-top:1px solid var(--border);display:flex;align-items:center;justify-content:center;gap:8px">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--dim)" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <span style="font-size:.82rem;color:var(--dim);font-weight:500">Время чтения · 14 минут</span>
+    </div>
+  </div>
 </div>
 <div class="dv"></div>
 
@@ -185,7 +211,8 @@ footer a{color:var(--accent);text-decoration:none}
 <section class="fact rv">
   <div class="fi">
     <div>
-      <div class="fn">Факт 01</div>
+      <div class="fn">Факт</div>
+      <div class="fact-num">01</div>
       <div class="ft">Зеркальные нейроны записали, как на вас смотрели. Это стало «правдой».</div>
       <div class="fb">
         <p>Мозг ребёнка буквально <strong>записывает чужие взгляды</strong>. Это не метафора — это физиология. Зеркальные нейроны активируются, когда на нас смотрят, и создают нейронную запись: «вот так меня видят».</p>
@@ -228,7 +255,8 @@ footer a{color:var(--accent);text-decoration:none}
 <section class="fact rv" style="background:var(--bg2)">
   <div class="fi rev">
     <div>
-      <div class="fn">Факт 02</div>
+      <div class="fn">Факт</div>
+      <div class="fact-num">02</div>
       <div class="ft">Решение «красота — не моё» было принято до 7 лет.</div>
       <div class="fb">
         <p>Базовый образ себя формируется в возрасте <strong>от 3 до 7 лет</strong> — ещё до того, как включается критическое мышление. Мозг работает в тета-ритме: всё, что приходит извне, записывается <strong>без фильтра</strong>.</p>
@@ -273,7 +301,8 @@ footer a{color:var(--accent);text-decoration:none}
 <section class="fact rv">
   <div class="fi">
     <div>
-      <div class="fn">Факт 03</div>
+      <div class="fn">Факт</div>
+      <div class="fact-num">03</div>
       <div class="ft">Кортизол буквально меняет то, что вы видите в зеркале.</div>
       <div class="fb">
         <p>Когда мозг в режиме стресса, он ищет угрозу. Кортизол <strong>перенастраивает восприятие</strong>: вы начинаете видеть опасность там, где её нет. В том числе — в собственном отражении.</p>
@@ -301,7 +330,8 @@ footer a{color:var(--accent);text-decoration:none}
 <section class="fact rv" style="background:var(--bg2)">
   <div class="fi rev">
     <div>
-      <div class="fn">Факт 04</div>
+      <div class="fn">Факт</div>
+      <div class="fact-num">04</div>
       <div class="ft">Мозг запоминает критику в 5 раз сильнее, чем комплимент.</div>
       <div class="fb">
         <p>Это называется <strong>negativity bias</strong> — эволюционный перекос мозга. Негативный опыт записывается в память <strong>в 5 раз быстрее и глубже</strong>, чем позитивный.</p>
@@ -337,7 +367,8 @@ footer a{color:var(--accent);text-decoration:none}
 <section class="fact rv">
   <div class="fi">
     <div>
-      <div class="fn">Факт 05</div>
+      <div class="fn">Факт</div>
+      <div class="fact-num">05</div>
       <div class="ft">Решение хранится в теле. Не в голове.</div>
       <div class="fb">
         <p>«Красота — не моё» — это не мысль. Это <strong>паттерн в мышцах, дыхании, осанке</strong>. В том, как вы занимаете пространство. Как входите в комнату. Как держите плечи.</p>
@@ -373,11 +404,36 @@ footer a{color:var(--accent);text-decoration:none}
   </div>
 </section>
 
+
+<!-- ИНТЕРАКТИВНЫЙ ЧЕКЛИСТ -->
+<section class="rv" style="padding:80px 32px;text-align:center;background:linear-gradient(180deg,var(--bg),var(--bg2));position:relative">
+  <div style="position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent-brd),transparent)"></div>
+  <div style="max-width:640px;margin:0 auto">
+    <div style="font-size:.65rem;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:var(--warm);margin-bottom:18px">✦ Узнайте свой щит</div>
+    <h2 style="font-family:var(--S);font-size:clamp(1.6rem,4vw,2.4rem);font-weight:400;color:var(--text);margin-bottom:10px;font-style:italic">Это про вас?</h2>
+    <p style="font-size:1.05rem;color:var(--muted);margin-bottom:32px;line-height:1.7">Отметьте то, что откликается. Будьте честны с собой.</p>
+    <div style="text-align:left;max-width:520px;margin:0 auto" id="checklist">
+      <div class="cl-item" onclick="toggleCheck(this)" style="display:flex;align-items:flex-start;gap:14px;padding:14px 20px;margin-bottom:8px;border-radius:6px;cursor:pointer;transition:all .3s;border:1px solid transparent;user-select:none"><div class="cl-box" style="width:22px;height:22px;border:2px solid var(--accent-brd);border-radius:4px;flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;transition:all .3s;font-size:12px;color:transparent">✓</div><div style="font-size:1.02rem;color:var(--body);line-height:1.6">Первая мысль у зеркала — найти, что не так</div></div>
+      <div class="cl-item" onclick="toggleCheck(this)" style="display:flex;align-items:flex-start;gap:14px;padding:14px 20px;margin-bottom:8px;border-radius:6px;cursor:pointer;transition:all .3s;border:1px solid transparent;user-select:none"><div class="cl-box" style="width:22px;height:22px;border:2px solid var(--accent-brd);border-radius:4px;flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;transition:all .3s;font-size:12px;color:transparent">✓</div><div style="font-size:1.02rem;color:var(--body);line-height:1.6">Комплименты не «заходят» — как будто не про вас</div></div>
+      <div class="cl-item" onclick="toggleCheck(this)" style="display:flex;align-items:flex-start;gap:14px;padding:14px 20px;margin-bottom:8px;border-radius:6px;cursor:pointer;transition:all .3s;border:1px solid transparent;user-select:none"><div class="cl-box" style="width:22px;height:22px;border:2px solid var(--accent-brd);border-radius:4px;flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;transition:all .3s;font-size:12px;color:transparent">✓</div><div style="font-size:1.02rem;color:var(--body);line-height:1.6">Стараетесь не привлекать внимание к внешности</div></div>
+      <div class="cl-item" onclick="toggleCheck(this)" style="display:flex;align-items:flex-start;gap:14px;padding:14px 20px;margin-bottom:8px;border-radius:6px;cursor:pointer;transition:all .3s;border:1px solid transparent;user-select:none"><div class="cl-box" style="width:22px;height:22px;border:2px solid var(--accent-brd);border-radius:4px;flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;transition:all .3s;font-size:12px;color:transparent">✓</div><div style="font-size:1.02rem;color:var(--body);line-height:1.6">Внутри есть ощущение: «красота — это не про меня, зато я умная»</div></div>
+      <div class="cl-item" onclick="toggleCheck(this)" style="display:flex;align-items:flex-start;gap:14px;padding:14px 20px;margin-bottom:8px;border-radius:6px;cursor:pointer;transition:all .3s;border:1px solid transparent;user-select:none"><div class="cl-box" style="width:22px;height:22px;border:2px solid var(--accent-brd);border-radius:4px;flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;transition:all .3s;font-size:12px;color:transparent">✓</div><div style="font-size:1.02rem;color:var(--body);line-height:1.6">На фото ищете ракурс, где «нормально», а не где красиво</div></div>
+      <div class="cl-item" onclick="toggleCheck(this)" style="display:flex;align-items:flex-start;gap:14px;padding:14px 20px;margin-bottom:8px;border-radius:6px;cursor:pointer;transition:all .3s;border:1px solid transparent;user-select:none"><div class="cl-box" style="width:22px;height:22px;border:2px solid var(--accent-brd);border-radius:4px;flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;transition:all .3s;font-size:12px;color:transparent">✓</div><div style="font-size:1.02rem;color:var(--body);line-height:1.6">Тело кажется «не тем» — не те пропорции, не то лицо</div></div>
+      <div class="cl-item" onclick="toggleCheck(this)" style="display:flex;align-items:flex-start;gap:14px;padding:14px 20px;margin-bottom:8px;border-radius:6px;cursor:pointer;transition:all .3s;border:1px solid transparent;user-select:none"><div class="cl-box" style="width:22px;height:22px;border:2px solid var(--accent-brd);border-radius:4px;flex-shrink:0;margin-top:2px;display:flex;align-items:center;justify-content:center;transition:all .3s;font-size:12px;color:transparent">✓</div><div style="font-size:1.02rem;color:var(--body);line-height:1.6">Где-то внутри живёт часть, которая хочет расцвести — но не разрешает себе</div></div>
+    </div>
+    <div id="clResult" style="margin-top:28px;padding:24px;background:var(--card);border:1px solid var(--accent-brd);border-radius:4px;display:none;text-align:left">
+      <div id="clResultTitle" style="font-family:var(--S);font-size:1.3rem;color:var(--text);margin-bottom:8px"></div>
+      <div id="clResultText" style="font-size:.98rem;color:var(--body);line-height:1.7"></div>
+    </div>
+  </div>
+</section>
+
 <!-- ФАКТ 6 -->
 <section class="fact rv" style="background:var(--bg2)">
   <div class="fi rev">
     <div>
-      <div class="fn">Факт 06</div>
+      <div class="fn">Факт</div>
+      <div class="fact-num">06</div>
       <div class="ft">Три стратегии защиты. Какая из них — ваша?</div>
       <div class="fb">
         <p>Когда-то нужно было выбрать: быть красивой или быть в безопасности. Большинство выбрали безопасность. И создали один из трёх щитов:</p>
@@ -427,7 +483,8 @@ footer a{color:var(--accent);text-decoration:none}
 <section class="fact rv">
   <div class="fi">
     <div>
-      <div class="fn">Факт 07</div>
+      <div class="fn">Факт</div>
+      <div class="fact-num">07</div>
       <div class="ft">Война с телом запускает хронический стресс. Стресс ускоряет старение.</div>
       <div class="fb">
         <p>Каждый раз, когда вы смотрите в зеркало с отвращением — <strong>тело получает сигнал угрозы</strong>. Кортизол. Воспаление. Напряжение.</p>
@@ -470,7 +527,8 @@ footer a{color:var(--accent);text-decoration:none}
 <section class="fact rv" style="background:var(--bg2)">
   <div class="fi rev">
     <div>
-      <div class="fn">Факт 08</div>
+      <div class="fn">Факт</div>
+      <div class="fact-num">08</div>
       <div class="ft">То, как вы себя видите, буквально меняет гены. Эпигенетика.</div>
       <div class="fb">
         <p>Эпигенетика доказала: <strong>состояние, в котором вы живёте, включает и выключает гены</strong>. Не меняя ДНК. Хронический стресс от нелюбви к себе включает гены воспаления и старения.</p>
@@ -504,7 +562,8 @@ footer a{color:var(--accent);text-decoration:none}
 <section class="fact rv">
   <div class="fi">
     <div>
-      <div class="fn">Факт 09</div>
+      <div class="fn">Факт</div>
+      <div class="fact-num">09</div>
       <div class="ft">Красота — это состояние нервной системы. И его можно включить.</div>
       <div class="fb">
         <p>Женщины, которые «светятся» — не красивее. У них <strong>другое состояние нервной системы</strong>. Парасимпатический режим: расслабление, безопасность, контакт с телом.</p>
@@ -530,6 +589,38 @@ footer a{color:var(--accent);text-decoration:none}
         <div class="ss">Porges, Polyvagal Theory · Dana, 2018</div>
       </div>
     </div>
+  </div>
+</section>
+
+
+<!-- SOCIAL PROOF -->
+<section class="rv" style="padding:100px 32px;text-align:center">
+  <div style="font-size:.7rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:22px">— Результаты участниц —</div>
+  <h2 style="font-family:var(--S);font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:400;color:var(--text);margin-bottom:16px">Они разрешили себе быть красивыми</h2>
+  <p style="font-size:1.1rem;color:var(--muted);max-width:560px;margin:0 auto 52px;line-height:1.8">Реальные женщины, которые прошли встречу и впервые посмотрели на себя по-другому.</p>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1000px;margin:0 auto">
+    <div style="background:var(--card);border:1px solid var(--accent-brd);padding:36px 28px;text-align:left;border-radius:4px;position:relative"><div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--warm));opacity:.4"></div><div style="font-family:var(--S);font-size:1.15rem;font-style:italic;color:var(--text);line-height:1.6;margin-bottom:24px;padding-left:20px;border-left:2px solid var(--accent-brd)">Я впервые за 15 лет надела платье с открытыми плечами. И не потому что «заставила себя». А потому что плечи расслабились. Буквально.</div><div style="display:flex;align-items:center;gap:14px"><div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,rgba(155,107,120,.1),rgba(139,123,90,.1));display:flex;align-items:center;justify-content:center;font-family:var(--S);font-size:1.2rem;font-weight:600;color:var(--accent)">И</div><div><div style="font-size:.9rem;font-weight:700;color:var(--text)">Ирина К.</div><div style="font-size:.8rem;color:var(--dim)">38 лет, Москва</div></div></div><div style="margin-top:18px;padding-top:14px;border-top:1px solid var(--border);font-size:.85rem;font-weight:700;color:var(--accent)">Плечи расслабились за 3 дня</div></div>
+    <div style="background:var(--card);border:1px solid var(--accent-brd);padding:36px 28px;text-align:left;border-radius:4px;position:relative"><div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--warm));opacity:.4"></div><div style="font-family:var(--S);font-size:1.15rem;font-style:italic;color:var(--text);line-height:1.6;margin-bottom:24px;padding-left:20px;border-left:2px solid var(--accent-brd)">Рыдала прямо во время встречи. Поняла, что «серьёзная и умная» — это щит. Уже неделю хожу в ярком. Муж спросил: «Что случилось? Ты сияешь».</div><div style="display:flex;align-items:center;gap:14px"><div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,rgba(155,107,120,.1),rgba(139,123,90,.1));display:flex;align-items:center;justify-content:center;font-family:var(--S);font-size:1.2rem;font-weight:600;color:var(--accent)">Н</div><div><div style="font-size:.9rem;font-weight:700;color:var(--text)">Наталья В.</div><div style="font-size:.8rem;color:var(--dim)">42 года, Петербург</div></div></div><div style="margin-top:18px;padding-top:14px;border-top:1px solid var(--border);font-size:.85rem;font-weight:700;color:var(--accent)">Сняла «щит строгости» за 1 встречу</div></div>
+    <div style="background:var(--card);border:1px solid var(--accent-brd);padding:36px 28px;text-align:left;border-radius:4px;position:relative"><div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--warm));opacity:.4"></div><div style="font-family:var(--S);font-size:1.15rem;font-style:italic;color:var(--text);line-height:1.6;margin-bottom:24px;padding-left:20px;border-left:2px solid var(--accent-brd)">Впервые посмотрела в зеркало без мысли «что не так». Просто посмотрела. И увидела живую женщину. Это было... неожиданно тепло.</div><div style="display:flex;align-items:center;gap:14px"><div style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,rgba(155,107,120,.1),rgba(139,123,90,.1));display:flex;align-items:center;justify-content:center;font-family:var(--S);font-size:1.2rem;font-weight:600;color:var(--accent)">Д</div><div><div style="font-size:.9rem;font-weight:700;color:var(--text)">Дарья Л.</div><div style="font-size:.8rem;color:var(--dim)">35 лет, Новосибирск</div></div></div><div style="margin-top:18px;padding-top:14px;border-top:1px solid var(--border);font-size:.85rem;font-weight:700;color:var(--accent)">Отношение к отражению изменилось</div></div>
+  </div>
+  <div style="display:flex;justify-content:center;gap:48px;margin-top:52px;flex-wrap:wrap">
+    <div style="text-align:center"><div style="font-family:var(--S);font-size:2.8rem;font-weight:600;color:var(--accent)" class="counter" data-target="40">0</div><div style="font-size:.82rem;color:var(--dim);margin-top:2px">женщин прошли встречу</div></div>
+    <div style="text-align:center"><div style="font-family:var(--S);font-size:2.8rem;font-weight:600;color:var(--accent)">94%</div><div style="font-size:.82rem;color:var(--dim);margin-top:2px">почувствовали сдвиг в первую неделю</div></div>
+    <div style="text-align:center"><div style="font-family:var(--S);font-size:2.8rem;font-weight:600;color:var(--accent)">90</div><div style="font-size:.82rem;color:var(--dim);margin-top:2px">минут — одна встреча</div></div>
+  </div>
+</section>
+
+<!-- ЦЕНА БЕЗДЕЙСТВИЯ -->
+<section class="rv" style="padding:100px 32px;background:var(--bg2);text-align:center">
+  <div style="max-width:760px;margin:0 auto">
+    <div style="font-size:.7rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--rose);margin-bottom:18px">— Что происходит, если ничего не менять —</div>
+    <h2 style="font-family:var(--S);font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:400;color:var(--text);margin-bottom:36px">Цена бездействия — не ноль</h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:40px">
+      <div style="background:var(--card);border:1px solid rgba(160,92,88,.12);padding:32px 24px;border-radius:4px;text-align:center;position:relative;overflow:hidden"><div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--rose),var(--warm));opacity:.5"></div><div style="font-family:var(--S);font-size:2.6rem;font-weight:600;color:var(--rose);margin-bottom:6px">20–30%</div><div style="font-size:.92rem;color:var(--body);line-height:1.6">На столько вы видите себя менее привлекательной, чем есть</div></div>
+      <div style="background:var(--card);border:1px solid rgba(160,92,88,.12);padding:32px 24px;border-radius:4px;text-align:center;position:relative;overflow:hidden"><div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--rose),var(--warm));opacity:.5"></div><div style="font-family:var(--S);font-size:2.6rem;font-weight:600;color:var(--rose);margin-bottom:6px">×5</div><div style="font-size:.92rem;color:var(--body);line-height:1.6">Критика записывается глубже комплимента. Каждый день</div></div>
+      <div style="background:var(--card);border:1px solid rgba(160,92,88,.12);padding:32px 24px;border-radius:4px;text-align:center;position:relative;overflow:hidden"><div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--rose),var(--warm));opacity:.5"></div><div style="font-family:var(--S);font-size:2.6rem;font-weight:600;color:var(--rose);margin-bottom:6px">2 200</div><div style="font-size:.92rem;color:var(--body);line-height:1.6">Генов старения включены, пока вы воюете с отражением</div></div>
+    </div>
+    <p style="font-family:var(--S);font-size:clamp(1.3rem,3vw,1.7rem);font-style:italic;color:var(--text);line-height:1.5;max-width:600px;margin:0 auto">Каждый день войны с собой — тело ускоряет старение. Не замедляет. Ускоряет.</p>
   </div>
 </section>
 
@@ -571,33 +662,45 @@ footer a{color:var(--accent);text-decoration:none}
 
     <div class="t-break"><span class="t-break-dot"></span></div>
 
-    <p class="t-final">Если где-то внутри живёт часть, которая хочет просто расцвести — это&nbsp;ваш следующий шаг.</p>
+    <p class="t-final">Мы создали встречу, где вы найдёте момент, когда решение было принято — и&nbsp;отмените его. В&nbsp;теле. За&nbsp;90&nbsp;минут.</p>
 
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta-w rv">
-  <div class="cta-c">
-    <h2>Красота без оправданий</h2>
-    <p class="sub">90-минутная встреча о&nbsp;том, где именно было принято решение «красота — не&nbsp;моё». И&nbsp;как отменить его в&nbsp;теле. Практика прямо в&nbsp;эфире.</p>
-    <a href="https://thebodymindcode.github.io/beauty/" class="btn">Узнать подробности →</a>
-    <div class="cta-meta">Видео · Практика · Доступ навсегда</div>
-    <div class="cta-ff">
-      <div class="cta-f"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> 90 минут</div>
-      <div class="cta-f"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Живая практика</div>
-      <div class="cta-f"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Конспект</div>
-      <div class="cta-f"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Доступ навсегда</div>
+<!-- ТИЗЕР ПРОДУКТА -->
+<section class="rv" style="padding:100px 32px;text-align:center;background:linear-gradient(180deg,var(--bg2),var(--bg))">
+  <div style="max-width:700px;margin:0 auto">
+    <div style="font-size:.7rem;font-weight:700;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:18px">— Следующий шаг —</div>
+    <h2 style="font-family:var(--S);font-size:clamp(1.8rem,4.5vw,3rem);font-weight:400;color:var(--text);margin-bottom:16px">Красота без оправданий</h2>
+    <p style="font-size:1.1rem;color:var(--muted);line-height:1.8;margin-bottom:44px">90-минутная встреча о том, где именно было принято решение «красота — не моё». И как отменить его в теле.</p>
+    <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:560px;margin:0 auto 44px;text-align:left">
+      <div style="display:flex;align-items:flex-start;gap:14px;padding:20px;background:var(--card);border:1px solid var(--accent-brd);border-radius:4px"><div style="flex-shrink:0;width:40px;height:40px;border-radius:50%;background:rgba(155,107,120,.06);display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div><div style="font-size:.95rem;color:var(--body);line-height:1.6"><strong style="color:var(--text);display:block;margin-bottom:2px">90 минут видео</strong>Где взялось решение и как оно работает в теле</div></div>
+      <div style="display:flex;align-items:flex-start;gap:14px;padding:20px;background:var(--card);border:1px solid var(--accent-brd);border-radius:4px"><div style="flex-shrink:0;width:40px;height:40px;border-radius:50%;background:rgba(155,107,120,.06);display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div><div style="font-size:.95rem;color:var(--body);line-height:1.6"><strong style="color:var(--text);display:block;margin-bottom:2px">Живая практика</strong>Техника отмены решения прямо в эфире</div></div>
+      <div style="display:flex;align-items:flex-start;gap:14px;padding:20px;background:var(--card);border:1px solid var(--accent-brd);border-radius:4px"><div style="flex-shrink:0;width:40px;height:40px;border-radius:50%;background:rgba(139,123,90,.06);display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--warm)" stroke-width="1.5" stroke-linecap="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg></div><div style="font-size:.95rem;color:var(--body);line-height:1.6"><strong style="color:var(--text);display:block;margin-bottom:2px">Конспект</strong>Всё ключевое — в одном документе для возврата</div></div>
+      <div style="display:flex;align-items:flex-start;gap:14px;padding:20px;background:var(--card);border:1px solid var(--accent-brd);border-radius:4px"><div style="flex-shrink:0;width:40px;height:40px;border-radius:50%;background:rgba(139,123,90,.06);display:flex;align-items:center;justify-content:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--warm)" stroke-width="1.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="16 12 12 8 8 12"/><line x1="12" y1="16" x2="12" y2="8"/></svg></div><div style="font-size:.95rem;color:var(--body);line-height:1.6"><strong style="color:var(--text);display:block;margin-bottom:2px">Доступ навсегда</strong>Пересматривайте столько раз, сколько нужно</div></div>
     </div>
+    <a href="https://thebodymindcode.github.io/beauty/" class="btn">Узнать подробности о встрече →</a>
+    <div style="font-size:.88rem;color:var(--dim);margin-top:18px">Доступ сразу · Результат в первую неделю · Гарантия возврата</div>
+    <div style="font-size:.8rem;color:var(--muted);margin-top:8px;font-style:italic">40 женщин уже прошли. 94% почувствовали сдвиг в первую неделю.</div>
   </div>
 </section>
 
-<footer><p>Архитектура Сознания · <a href="https://instagram.com/thebodymindcode" target="_blank">@thebodymindcode</a></p></footer>
+<footer><p>Архитектура Сознания · <a href="https://t.me/thebodymindcode" target="_blank">@thebodymindcode</a> · <a href="https://instagram.com/thebodymindcode" target="_blank">Instagram</a></p></footer>
+
+<div class="sticky-cta" id="stickyCta"><a href="https://thebodymindcode.github.io/beauty/">Узнать о встрече →</a></div>
 
 <script>
 const obs=new IntersectionObserver(e=>e.forEach(i=>{if(i.isIntersecting){i.target.classList.add('visible');i.target.querySelectorAll('.counter').forEach(animateCounter)}}),{threshold:.1,rootMargin:'0px 0px -30px 0px'});
 document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
 function animateCounter(el){if(el.dataset.done)return;el.dataset.done='1';const t=+el.dataset.target,d=2200,s=performance.now();(function u(n){const p=Math.min((n-s)/d,1),e=1-Math.pow(1-p,4);el.textContent=Math.round(e*t).toLocaleString('ru-RU');if(p<1)requestAnimationFrame(u)})(s)}
+
+var stickyCta=document.getElementById('stickyCta');
+if(stickyCta)window.addEventListener('scroll',()=>{var y=window.scrollY,hH=document.querySelector('.hero').offsetHeight,dH=document.documentElement.scrollHeight,wH=window.innerHeight;stickyCta.classList.toggle('show',y>hH&&y<dH-wH-200)});
+
+function toggleCheck(el){el.classList.toggle('checked');el.style.background=el.classList.contains('checked')?'rgba(155,107,120,.05)':'';el.style.borderColor=el.classList.contains('checked')?'rgba(155,107,120,.14)':'transparent';var box=el.querySelector('.cl-box');if(el.classList.contains('checked')){box.style.background='var(--accent)';box.style.borderColor='var(--accent)';box.style.color='#fff'}else{box.style.background='';box.style.borderColor='';box.style.color='transparent'}updateResult()}
+function updateResult(){var c=document.querySelectorAll('.cl-item.checked').length,r=document.getElementById('clResult'),t=document.getElementById('clResultTitle'),x=document.getElementById('clResultText');if(c===0){r.style.display='none';return}r.style.display='block';if(c<=2){t.textContent='Щит начал формироваться';x.innerHTML='Решение «красота — не моё» уже работает, но ещё не стало тотальным. <strong style="color:var(--accent)">Сейчас — лучший момент отменить его,</strong> пока тело не закрепило паттерн окончательно.'}else if(c<=4){t.textContent='Программа активна — щит работает';x.innerHTML='Решение принято давно и исполняется автоматически: плечи, дыхание, взгляд. Тело прячет вас. <strong style="color:var(--accent)">Именно на этом уровне одна встреча даёт самый мощный сдвиг</strong> — потому что вы уже чувствуете, что что-то не так.'}else{t.textContent='Решение тотальное — тело не разрешает быть красивой';x.innerHTML='Вы отметили '+c+' из 7. Щит стал частью идентичности. Но <strong style="color:var(--accent)">это не вы — это программа, записанная в детстве. И её можно отменить.</strong> В теле, не в голове. За 90 минут.'}}
+
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',function(e){var t=document.querySelector(this.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'})}})});
 </script>
 </body>
 </html>
